@@ -1,0 +1,37 @@
+<div class="c-task-list">
+  <form (keydown.enter)="$event.preventDefault(); addTask()">
+    <input
+      type="text"
+      id="task-name"
+      [formControl]="taskName"
+      placeholder="O que você precisa fazer?"
+    />
+    <button type="button" (click)="addTask()">Adicionar tarefa</button>
+    <span
+      *ngIf="taskName.invalid && taskName.touched && taskName.errors"
+      class="c-task-list__errors"
+    >
+      <div *ngIf="taskName.errors['required'] === true">Obrigatório!</div>
+
+      {{ taskName.errors | json }}
+    </span>
+  </form>
+
+  <div class="c-task-list__header">
+    <h1>Lista de tarefas</h1>
+  </div>
+
+  <div class="c-task-list__board">
+    <play-task-list-column
+      name="Pendentes"
+      [taskList]="pendingTasks"
+    ></play-task-list-column>
+
+    <div class="c-task-list__board__divider"></div>
+
+    <play-task-list-column
+      name="Finalizadas"
+      [taskList]="completedTasks"
+    ></play-task-list-column>
+  </div>
+</div>

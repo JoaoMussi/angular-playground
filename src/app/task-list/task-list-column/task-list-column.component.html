@@ -1,0 +1,14 @@
+<div class="c-task-list__board__list">
+  <h2>{{ name }}</h2>
+
+  <ol>
+    <li
+      class="c-task-list__board__list__item"
+      *ngFor="let task of taskList"
+      [highlightColor]="task.completed ? 'red' : 'green'"
+      (click)="toggleTask(task)"
+    >
+      <p>{{ task.name }}</p>
+    </li>
+  </ol>
+</div>
