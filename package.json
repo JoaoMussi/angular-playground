@@ -27,7 +27,8 @@
     "watch": "ng build --watch --configuration development",
     "test": "jest",
     "test:watch": "jest --watch",
-    "test:coverage": "jest --coverage"
+    "test:coverage": "jest --coverage",
+    "lint": "ng lint"
   },
   "private": true,
   "dependencies": {
@@ -50,10 +51,13 @@
     "@angular/compiler-cli": "^17.3.0",
     "@types/jasmine": "~5.1.0",
     "@types/jest": "^29.5.14",
+    "angular-eslint": "19.0.2",
+    "eslint": "^9.16.0",
     "jasmine-core": "~5.1.0",
     "jest": "^29.7.0",
     "jest-preset-angular": "^14.4.2",
     "ts-node": "^10.9.2",
-    "typescript": "~5.4.2"
+    "typescript": "~5.4.2",
+    "typescript-eslint": "8.18.0"
   }
 }
