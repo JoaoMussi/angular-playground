@@ -8,13 +8,10 @@ import { Observable } from 'rxjs';
 })
 export abstract class BaseJsonPlaceholderService<
   T,
-  EntityFilters extends {
-    [param: string]:
-      | string
+  EntityFilters extends Record<string, | string
       | number
       | boolean
-      | readonly (string | number | boolean)[];
-  }
+      | readonly (string | number | boolean)[]>
 > {
   protected apiUrl = 'https://jsonplaceholder.typicode.com';
 

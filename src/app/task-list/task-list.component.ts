@@ -42,14 +42,12 @@ export class TaskListComponent {
   }
 
   private isValid(): boolean {
-    let isValid = true;
-
     if (!this.taskName.value) return false;
 
     const taskAlreadyExist =
       this.taskList.findIndex((task) => task.name === this.taskName.value) >= 0;
     if (taskAlreadyExist) return false;
 
-    return isValid;
+    return true;
   }
 }

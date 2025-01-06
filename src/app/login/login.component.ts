@@ -7,11 +7,11 @@ import {
   Validators,
 } from '@angular/forms';
 
-type LoginForm = {
+interface LoginForm {
   email: FormControl<string>;
   password: FormControl<string>;
   rememberMe: FormControl<boolean>;
-};
+}
 
 @Component({
   selector: 'play-login',

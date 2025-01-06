@@ -2,13 +2,15 @@
   <h2>{{ name }}</h2>
 
   <ol>
-    <li
-      class="c-task-list__board__list__item"
-      *ngFor="let task of taskList"
-      [highlightColor]="task.completed ? 'red' : 'green'"
-      (click)="toggleTask(task)"
-    >
-      <p>{{ task.name }}</p>
+    <li *ngFor="let task of taskList">
+      <a
+        class="link c-task-list__board__list__item"
+        [playHighlightColor]="task.completed ? 'red' : 'green'"
+        (click)="toggleTask(task)"
+        (keypress.enter)="toggleTask(task)"
+      >
+        {{ task.name }}
+      </a>
     </li>
   </ol>
 </div>

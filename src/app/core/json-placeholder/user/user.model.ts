@@ -1,4 +1,4 @@
-export type JsonPlaceholderUser = {
+export interface JsonPlaceholderUser {
   id?: number;
   name: string;
   username: string;
@@ -20,13 +20,13 @@ export type JsonPlaceholderUser = {
     catchPhrase: string;
     bs: string;
   };
-};
+}
 
 export type JsonPlaceholderUserFilterKeys = keyof Omit<
   JsonPlaceholderUser,
   'id' | 'address' | 'company'
 >;
 
-export type JsonPlaceholderUserFilters = Partial<{
-  [param in JsonPlaceholderUserFilterKeys]: string | number | boolean;
-}>;
+export type JsonPlaceholderUserFilters = Partial<
+  Record<JsonPlaceholderUserFilterKeys, string | number | boolean>
+>;

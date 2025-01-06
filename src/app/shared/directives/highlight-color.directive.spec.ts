@@ -8,7 +8,6 @@ import { HighlightColorDirective } from './highlight-color.directive';
 class HostComponent {}
 
 describe('HighlightColorDirective', () => {
-  let component: HostComponent;
   let fixture: ComponentFixture<HostComponent>;
   let directive: HighlightColorDirective;
 
@@ -18,7 +17,6 @@ describe('HighlightColorDirective', () => {
     }).compileComponents();
     fixture = TestBed.createComponent(HostComponent);
     directive = new HighlightColorDirective(fixture.elementRef);
-    component = fixture.componentInstance;
   });
 
   it('should create an instance', () => {
@@ -28,7 +26,7 @@ describe('HighlightColorDirective', () => {
   it('should highlight the element', () => {
     directive.onMouseEnter();
     expect(fixture.elementRef.nativeElement.style.backgroundColor).toBe(
-      directive.highlightColor
+      directive.playHighlightColor
     );
   });
 
