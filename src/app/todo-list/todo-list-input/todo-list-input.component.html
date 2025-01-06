@@ -1,0 +1,10 @@
+<div class="container my-4 d-flex gap-2 align-items-center">
+  <input
+    class="form-control"
+    type="text"
+    placeholder="What do you need to do?"
+    [(ngModel)]="todoName"
+    (keypress.enter)="addButtonClick()"
+  />
+  <button (click)="addButtonClick()" class="btn btn-primary w-25">Add Todo</button>
+</div>

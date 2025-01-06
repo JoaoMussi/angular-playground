@@ -47,7 +47,7 @@ export abstract class BaseJsonPlaceholderService<
     return this.http.patch<T>(`${this.apiUrl}/${id}`, body);
   }
 
-  delete(id: number): Observable<T> {
-    return this.http.delete<T>(`${this.apiUrl}/${id}`);
+  delete(id: number): Observable<void> {
+    return this.http.delete<void>(`${this.apiUrl}/${id}`);
   }
 }

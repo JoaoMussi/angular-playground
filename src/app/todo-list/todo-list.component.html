@@ -1,0 +1,16 @@
+<play-todo-list-input (addTask)="addTodo($event)"></play-todo-list-input>
+
+<div class="container d-flex align-items-start justify-content-center gap-4">
+  <play-todo-list-table
+    tableName="Pending"
+    [todoList]="getTodoListByStatus(false)"
+    (deleteTodo)="deleteTodo($event)"
+    (toggleTodo)="toggleTodo($event)"
+  ></play-todo-list-table>
+  <play-todo-list-table
+    tableName="Completed"
+    [todoList]="getTodoListByStatus(true)"
+    (deleteTodo)="deleteTodo($event)"
+    (toggleTodo)="toggleTodo($event)"
+  ></play-todo-list-table>
+</div>
