@@ -1,10 +1,13 @@
 export interface JsonPlaceholderTodo {
   userId: number;
-  id: number;
+  id?: number;
   title: string;
-  completed: string;
+  completed: boolean;
 }
 
 type JsonPlaceholderTodoFilterKeys = keyof JsonPlaceholderTodo;
 
-export type JsonPlaceholderTodoFilter = Record<JsonPlaceholderTodoFilterKeys, string | number | boolean>;
+export type JsonPlaceholderTodoFilter = Record<
+  JsonPlaceholderTodoFilterKeys,
+  string | number | boolean
+>;

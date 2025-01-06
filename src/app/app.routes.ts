@@ -14,10 +14,10 @@ export const routes: Routes = [
       import('./login/login.component').then((m) => m.LoginComponent),
   },
   {
-    path: 'task-list',
+    path: 'todo-list',
     loadComponent: () =>
-      import('./task-list/task-list.component').then(
-        (m) => m.TaskListComponent
+      import('./todo-list/todo-list.component').then(
+        (m) => m.TodoListComponent
       ),
   },
 ];

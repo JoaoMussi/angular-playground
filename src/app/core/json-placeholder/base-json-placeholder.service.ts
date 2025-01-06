@@ -1,17 +1,17 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { JsonPlaceholderEntity } from './json-placeholder.model';
-import { Observable } from 'rxjs';
+import { catchError, Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
 export abstract class BaseJsonPlaceholderService<
   T,
-  EntityFilters extends Record<string, | string
-      | number
-      | boolean
-      | readonly (string | number | boolean)[]>
+  EntityFilters extends Record<
+    string,
+    string | number | boolean | readonly (string | number | boolean)[]
+  >
 > {
   protected apiUrl = 'https://jsonplaceholder.typicode.com';
 
