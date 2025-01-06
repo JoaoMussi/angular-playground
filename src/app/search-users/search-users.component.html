@@ -1,0 +1,27 @@
+<div class="container my-4">
+  <input
+    class="form-control w-25"
+    type="text"
+    placeholder="Filter by name, username or email"
+    (input)="searchChanged($event)"
+  />
+
+  <table class="my-4 table border">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Name</th>
+        <th scope="col">Username</th>
+        <th scope="col">E-mail</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of users()">
+        <td>{{ user.id }}</td>
+        <td>{{ user.name }}</td>
+        <td>{{ user.username }}</td>
+        <td>{{ user.email }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -2,9 +2,11 @@ import { Routes } from '@angular/router';
 
 export const routes: Routes = [
   {
-    path: 'search',
+    path: 'search-users',
     loadComponent: () =>
-      import('./search/search.component').then((m) => m.SearchComponent),
+      import('./search-users/search-users.component').then(
+        (m) => m.SearchComponent
+      ),
   },
   {
     path: 'login',
